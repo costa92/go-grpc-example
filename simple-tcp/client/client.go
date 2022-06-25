@@ -13,19 +13,19 @@ const (
 )
 
 func main() {
-	conn,err := grpc.Dial(PORT,grpc.WithInsecure())
+	conn, err := grpc.Dial(PORT, grpc.WithInsecure())
 	if err != nil {
-		log.Fatalf("grpc.Dial err:%v",err)
+		log.Fatalf("grpc.Dial err:%v", err)
 	}
 	defer conn.Close()
 
 	client := proto.NewSearchServiceClient(conn)
-	resp ,err := client.Search(context.Background(),&proto.SearchRequest{
+	resp, err := client.Search(context.Background(), &proto.SearchRequest{
 		SearchName: "get test ",
 	})
 
 	if err != nil {
-		log.Fatalf("client search err:%v",err)
+		log.Fatalf("service search err:%v", err)
 	}
 
 	fmt.Println(resp.GetResponse())

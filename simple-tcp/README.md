@@ -3,9 +3,9 @@
 ### 目录结构：
 ```shell
 $ tree simple-tcp
-├── README.md   
-├── client
-│   └── client.go
+├── README.md.md   
+├── service
+│   └── service.go
 ├── proto
 │   └── search.proto
 ├── server
@@ -43,11 +43,11 @@ go run server.go
 执行客户端
 
 ```shell
-go run client/client.go
+go run service/service.go
 ```
 执行结果：
 
 ```shell
-$ go run client/client.go
+$ go run service/service.go
 get test Server
 ```

@@ -28,7 +28,7 @@ func main() {
 		SearchName: "gRPC",
 	})
 	if err != nil {
-		log.Fatalf("client.Search err: %v", err)
+		log.Fatalf("service.Search err: %v", err)
 	}
 
 	log.Printf("resp: %s", resp.GetResponse())
