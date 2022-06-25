@@ -24,3 +24,5 @@ protoc --go_out=services --go_opt=paths=source_relative \
     --go-grpc_out=require_unimplemented_servers=false:services --go-grpc_opt=paths=source_relative \
     proto/hello.proto
 ```
+
+### 参考: https://blog.csdn.net/guolianggsta/article/details/118075613?spm=1001.2101.3001.6650.13&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-13-118075613-blog-108135724.pc_relevant_downloadblacklistv1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-13-118075613-blog-108135724.pc_relevant_downloadblacklistv1&utm_relevant_index=16
