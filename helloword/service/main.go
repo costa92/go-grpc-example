@@ -9,11 +9,7 @@ import (
 )
 
 type HelloServiceImpl struct {
-}
-
-func (p *HelloServiceImpl) mustEmbedUnimplementedHelloServiceServer() {
-	//TODO implement me
-	panic("implement me")
+	helloword.UnimplementedHelloServiceServer
 }
 
 func (p *HelloServiceImpl) Hello(

@@ -43,19 +43,21 @@ func (c *helloServiceClient) Hello(ctx context.Context, in *String, opts ...grpc
 }
 
 // HelloServiceServer is the server API for HelloService service.
-// All implementations should embed UnimplementedHelloServiceServer
+// All implementations must embed UnimplementedHelloServiceServer
 // for forward compatibility
 type HelloServiceServer interface {
 	Hello(context.Context, *String) (*String, error)
+	mustEmbedUnimplementedHelloServiceServer()
 }
 
-// UnimplementedHelloServiceServer should be embedded to have forward compatible implementations.
+// UnimplementedHelloServiceServer must be embedded to have forward compatible implementations.
 type UnimplementedHelloServiceServer struct {
 }
 
 func (UnimplementedHelloServiceServer) Hello(context.Context, *String) (*String, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Hello not implemented")
 }
+func (UnimplementedHelloServiceServer) mustEmbedUnimplementedHelloServiceServer() {}
 
 // UnsafeHelloServiceServer may be embedded to opt out of forward compatibility for this service.
 // Use of this interface is not recommended, as added methods to HelloServiceServer will

@@ -12,6 +12,11 @@ protoc --go_out=services --go_opt=paths=source_relative \
 
 1. 在grpc server实现结构体中匿名嵌入Unimplemented***Server结构体
 
+```golang
+type HelloServiceImpl struct {
+    helloword.UnimplementedHelloServiceServer
+}
+```
 2. 使用protoc生成server代码时命令行加上关闭选项，protoc --go-grpc_out=require_unimplemented_servers=false
 
 ```shell
